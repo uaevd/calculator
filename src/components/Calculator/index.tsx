@@ -4,6 +4,6 @@ import { Display } from 'components/Display';
 export const Calculator = () => (
     <div>
         <Display />
-        <div>{Array(4).fill(<div>{Array(5).fill(<Button label="Button" />)}</div>)}</div>
+        <div>{Array(5).fill(<div>{Array(4).fill(<Button label="0" />)}</div>)}</div>
     </div>
 );
