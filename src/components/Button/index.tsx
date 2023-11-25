@@ -8,8 +8,9 @@ const Container = styled.button`
     border-radius: 16px;
     color: #232323;
     cursor: pointer;
-    font-family: inherit;
+    font-family: 'Dosis', sans-serif;
     font-size: 24px;
+    font-weight: 600;
     height: 70px;
     width: 70px;
     margin: 8px;
