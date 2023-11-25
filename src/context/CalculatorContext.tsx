@@ -34,7 +34,7 @@ export const CalculatorContextProvider = ({ children }: Props) => {
     };
     const onBackward = () => {
         if (snapshot) setSnapshot('');
-        if (buffer.length) {
+        if (buffer) {
             const resultBuffer = buffer.replace(/\s+$/, '').slice(0, -1).replace(/\s+$/, '');
             if (!resultBuffer) setBuffer('');
             else setBuffer(resultBuffer);
