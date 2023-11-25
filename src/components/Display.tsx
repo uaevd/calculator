@@ -22,7 +22,7 @@ export const Display = () => {
     return (
         <Container>
             <Label text={snapshot} fontSize="12px" color="#939393" />
-            <Label text={buffer} fontSize="24px" color="#232323" />
+            <Label text={buffer || '0'} fontSize="24px" color="#232323" />
         </Container>
     );
 };
