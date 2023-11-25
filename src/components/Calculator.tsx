@@ -27,96 +27,37 @@ export const Calculator = () => {
         <Container>
             <Display />
             <ButtonTable>
-                {buttonTableSkeleton.map((row, index) => (
-                    <div key={`button-row-${index}`}>
-                        {row.map((props, index) => (
-                            <Button key={`button-${index}`} {...props} />
-                        ))}
-                    </div>
-                ))}
+                <div>
+                    <Button label="(" className="operator" />
+                    <Button label=")" className="operator" />
+                    <Button label="←" className="operator" />
+                    <Button label="C" className="operator" />
+                </div>
+                <div>
+                    <Button label="7" />
+                    <Button label="8" />
+                    <Button label="9" />
+                    <Button label="÷" className="operator" />
+                </div>
+                <div>
+                    <Button label="4" />
+                    <Button label="5" />
+                    <Button label="6" />
+                    <Button label="×" className="operator" />
+                </div>
+                <div>
+                    <Button label="1" />
+                    <Button label="2" />
+                    <Button label="3" />
+                    <Button label="−" className="operator" />
+                </div>
+                <div>
+                    <Button label="0" />
+                    <Button label="." />
+                    <Button label="=" className="equal" />
+                    <Button label="+" className="operator" />
+                </div>
             </ButtonTable>
         </Container>
     );
 };
-
-const buttonTableSkeleton: { label: string; className?: string }[][] = [
-    [
-        {
-            label: '(',
-            className: 'operator',
-        },
-        {
-            label: ')',
-            className: 'operator',
-        },
-        {
-            label: '←',
-            className: 'operator',
-        },
-        {
-            label: 'C',
-            className: 'operator',
-        },
-    ],
-    [
-        {
-            label: '7',
-        },
-        {
-            label: '8',
-        },
-        {
-            label: '9',
-        },
-        {
-            label: '÷',
-            className: 'operator',
-        },
-    ],
-    [
-        {
-            label: '4',
-        },
-        {
-            label: '5',
-        },
-        {
-            label: '6',
-        },
-        {
-            label: '×',
-            className: 'operator',
-        },
-    ],
-    [
-        {
-            label: '1',
-        },
-        {
-            label: '2',
-        },
-        {
-            label: '3',
-        },
-        {
-            label: '−',
-            className: 'operator',
-        },
-    ],
-    [
-        {
-            label: '0',
-        },
-        {
-            label: '.',
-        },
-        {
-            label: '=',
-            className: 'equal',
-        },
-        {
-            label: '+',
-            className: 'operator',
-        },
-    ],
-];
