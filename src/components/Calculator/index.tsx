@@ -32,7 +32,7 @@ const ButtonRow = styled.div`
 `;
 
 export const Calculator = () => {
-    const skeleton: { label: string; isSpecial: boolean }[][] = buttonTableSkeleton;
+    const skeleton: { label: string; className?: string }[][] = buttonTableSkeleton;
 
     return (
         <Container>

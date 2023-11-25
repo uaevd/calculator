@@ -1,92 +1,81 @@
-export const buttonTableSkeleton: { label: string; isSpecial: boolean }[][] = [
+export const buttonTableSkeleton: { label: string; className?: string }[][] = [
     [
         {
             label: '(',
-            isSpecial: true,
+            className: 'operator',
         },
         {
             label: ')',
-            isSpecial: true,
+            className: 'operator',
         },
         {
             label: '←',
-            isSpecial: true,
+            className: 'operator',
         },
         {
             label: 'C',
-            isSpecial: true,
+            className: 'operator',
         },
     ],
     [
         {
             label: '7',
-            isSpecial: false,
         },
         {
             label: '8',
-            isSpecial: false,
         },
         {
             label: '9',
-            isSpecial: false,
         },
         {
             label: '÷',
-            isSpecial: true,
+            className: 'operator',
         },
     ],
     [
         {
             label: '4',
-            isSpecial: false,
         },
         {
             label: '5',
-            isSpecial: false,
         },
         {
             label: '6',
-            isSpecial: false,
         },
         {
             label: '×',
-            isSpecial: true,
+            className: 'operator',
         },
     ],
     [
         {
             label: '1',
-            isSpecial: false,
         },
         {
             label: '2',
-            isSpecial: false,
         },
         {
             label: '3',
-            isSpecial: false,
         },
         {
             label: '−',
-            isSpecial: true,
+            className: 'operator',
         },
     ],
     [
         {
             label: '0',
-            isSpecial: false,
         },
         {
             label: '.',
-            isSpecial: false,
         },
         {
             label: '=',
-            isSpecial: true,
+            className: 'equal',
         },
         {
             label: '+',
-            isSpecial: true,
+            className: 'operator',
         },
     ],
 ];

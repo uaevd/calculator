@@ -24,6 +24,13 @@ const Container = styled.button`
         color: #fff;
     }
 
+    &.equal {
+        background: #ffe83a;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        color: #232323;
+    }
+
     &:hover {
         opacity: 0.8;
     }
@@ -36,9 +43,9 @@ const Container = styled.button`
 
 interface Props {
     readonly label: string;
-    readonly isSpecial: boolean;
+    readonly className?: string;
 }
 
-export const Button = ({ label, isSpecial }: Props) => (
-    <Container className={isSpecial ? 'operator' : undefined}>{label}</Container>
+export const Button = ({ label, className }: Props) => (
+    <Container className={className}>{label}</Container>
 );
