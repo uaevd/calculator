@@ -43,9 +43,12 @@ const Container = styled.button`
 
 interface Props {
     readonly label: string;
+    readonly onClick?: () => void;
     readonly className?: string;
 }
 
-export const Button = ({ label, className }: Props) => (
-    <Container className={className}>{label}</Container>
+export const Button = ({ label, onClick, className }: Props) => (
+    <Container onClick={onClick} className={className}>
+        {label}
+    </Container>
 );

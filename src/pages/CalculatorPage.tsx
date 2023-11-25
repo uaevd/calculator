@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import { Calculator } from 'components/Calculator';
+import { CalculatorContextProvider } from 'context/CalculatorContext';
 
 const Container = styled.div`
     align-items: center;
@@ -13,6 +14,8 @@ const Container = styled.div`
 
 export const CalculatorPage = () => (
     <Container>
-        <Calculator />
+        <CalculatorContextProvider>
+            <Calculator />
+        </CalculatorContextProvider>
     </Container>
 );
