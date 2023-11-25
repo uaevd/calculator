@@ -17,18 +17,10 @@ const Container = styled.div`
 `;
 
 const ButtonTable = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 16px;
     margin-top: 16px;
     width: 344px;
-`;
-
-const ButtonRow = styled.div`
-    display: flex;
-    justify-content: space-between;
 `;
 
 export const Calculator = () => {
@@ -37,11 +29,11 @@ export const Calculator = () => {
             <Display />
             <ButtonTable>
                 {buttonTableSkeleton.map((row, index) => (
-                    <ButtonRow key={`button-row-${index}`}>
+                    <div key={`button-row-${index}`}>
                         {row.map((props, index) => (
                             <Button key={`button-${index}`} {...props} />
                         ))}
-                    </ButtonRow>
+                    </div>
                 ))}
             </ButtonTable>
         </Container>
