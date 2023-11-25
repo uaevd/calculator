@@ -1,5 +1,6 @@
 {
     "name": "calculator",
+    "version": "v0.1",
     "private": true,
     "scripts": {
         "start": "react-scripts start",
@@ -30,6 +31,7 @@
         ]
     },
     "devDependencies": {
+        "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
         "@testing-library/jest-dom": "^6.1.4",
         "@testing-library/react": "^14.1.2",
