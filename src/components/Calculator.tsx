@@ -32,8 +32,8 @@ export const Calculator = () => {
             <Display />
             <ButtonTable>
                 <div>
-                    <Button label="(" onClick={() => onForward('(')} className="operator" />
-                    <Button label=")" onClick={() => onForward(')')} className="operator" />
+                    <Button label="(" onClick={() => onForward('( ')} className="operator" />
+                    <Button label=")" onClick={() => onForward(' )')} className="operator" />
                     <Button label="←" onClick={onBackward} className="operator" />
                     <Button label="C" onClick={onClear} className="operator" />
                 </div>
