@@ -25,7 +25,7 @@ const ButtonTable = styled.div`
 `;
 
 export const Calculator = () => {
-    const { onForward, onBackward, onClear } = useContext(CalculatorContext);
+    const { onForward, onBackward, onClear, onEqual } = useContext(CalculatorContext);
 
     return (
         <Container>
@@ -58,7 +58,7 @@ export const Calculator = () => {
                 <div>
                     <Button label="0" onClick={() => onForward('0')} />
                     <Button label="." onClick={() => onForward('.')} />
-                    <Button label="=" className="equal" />
+                    <Button label="=" onClick={onEqual} className="equal" />
                     <Button label="+" onClick={() => onForward(' + ')} className="operator" />
                 </div>
             </ButtonTable>

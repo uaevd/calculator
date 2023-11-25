@@ -45,8 +45,18 @@ export const CalculatorContextProvider = ({ children }: Props) => {
         setBuffer('');
     };
     const onEqual = () => {
-        setSnapshot(`${buffer} =`);
-        setBuffer(eval(buffer));
+        try {
+            const modifiedBuffer = buffer.replace('−', '-').replace('×', '*').replace('÷', '/');
+            const evalResult = Number(eval(modifiedBuffer));
+            const formattedResult = evalResult
+                .toFixed(9)
+                .replace(/\.?0+$/, '')
+                .replace('-', '− ');
+            setSnapshot(`${buffer} =`);
+            setBuffer(formattedResult);
+        } catch (e) {
+            alert('Invalid Buffer!');
+        }
     };
 
     return (
