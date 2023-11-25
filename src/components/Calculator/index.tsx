@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 
 import { Button } from 'components/Button';
 import { Display } from 'components/Display';
+import { buttonTableSkeleton } from 'data';
 
 const Container = styled.div`
     backdrop-filter: blur(4px);
@@ -30,13 +31,21 @@ const ButtonRow = styled.div`
     justify-content: space-between;
 `;
 
-export const Calculator = () => (
-    <Container>
-        <Display />
-        <ButtonTable>
-            {Array(5).fill(
-                <ButtonRow>{Array(4).fill(<Button label="0" isSpecial={true} />)}</ButtonRow>,
-            )}
-        </ButtonTable>
-    </Container>
-);
+export const Calculator = () => {
+    const skeleton: { label: string; isSpecial: boolean }[][] = buttonTableSkeleton;
+
+    return (
+        <Container>
+            <Display />
+            <ButtonTable>
+                {skeleton.map((row, index) => (
+                    <ButtonRow key={`button-row-${index}`}>
+                        {row.map((props, index) => (
+                            <Button key={`button-${index}`} {...props} />
+                        ))}
+                    </ButtonRow>
+                ))}
+            </ButtonTable>
+        </Container>
+    );
+};
