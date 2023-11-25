@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import { Button } from 'components/Button';
 import { Display } from 'components/Display';
-import { buttonTableSkeleton } from 'data';
+import buttonTableSkeleton from 'data/buttonTableSkeleton';
 
 const Container = styled.div`
     backdrop-filter: blur(4px);
@@ -32,13 +32,11 @@ const ButtonRow = styled.div`
 `;
 
 export const Calculator = () => {
-    const skeleton: { label: string; className?: string }[][] = buttonTableSkeleton;
-
     return (
         <Container>
             <Display />
             <ButtonTable>
-                {skeleton.map((row, index) => (
+                {buttonTableSkeleton.map((row, index) => (
                     <ButtonRow key={`button-row-${index}`}>
                         {row.map((props, index) => (
                             <Button key={`button-${index}`} {...props} />

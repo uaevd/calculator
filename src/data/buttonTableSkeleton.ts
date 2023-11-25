@@ -1,4 +1,4 @@
-export const buttonTableSkeleton: { label: string; className?: string }[][] = [
+const buttonTableSkeleton: { label: string; className?: string }[][] = [
     [
         {
             label: '(',
@@ -79,3 +79,5 @@ export const buttonTableSkeleton: { label: string; className?: string }[][] = [
         },
     ],
 ];
+
+export default buttonTableSkeleton;
