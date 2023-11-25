@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import styled from '@emotion/styled';
 
 import { Button } from 'components/Button';
 import { Display } from 'components/Display';
+import { CalculatorContext } from 'context/CalculatorContext';
 
 const Container = styled.div`
     backdrop-filter: blur(4px);
@@ -23,39 +25,41 @@ const ButtonTable = styled.div`
 `;
 
 export const Calculator = () => {
+    const { onForward, onBackward, onClear } = useContext(CalculatorContext);
+
     return (
         <Container>
             <Display />
             <ButtonTable>
                 <div>
-                    <Button label="(" className="operator" />
-                    <Button label=")" className="operator" />
-                    <Button label="←" className="operator" />
-                    <Button label="C" className="operator" />
+                    <Button label="(" onClick={() => onForward('(')} className="operator" />
+                    <Button label=")" onClick={() => onForward(')')} className="operator" />
+                    <Button label="←" onClick={onBackward} className="operator" />
+                    <Button label="C" onClick={onClear} className="operator" />
                 </div>
                 <div>
-                    <Button label="7" />
-                    <Button label="8" />
-                    <Button label="9" />
-                    <Button label="÷" className="operator" />
+                    <Button label="7" onClick={() => onForward('7')} />
+                    <Button label="8" onClick={() => onForward('8')} />
+                    <Button label="9" onClick={() => onForward('9')} />
+                    <Button label="÷" onClick={() => onForward(' ÷ ')} className="operator" />
                 </div>
                 <div>
-                    <Button label="4" />
-                    <Button label="5" />
-                    <Button label="6" />
-                    <Button label="×" className="operator" />
+                    <Button label="4" onClick={() => onForward('4')} />
+                    <Button label="5" onClick={() => onForward('5')} />
+                    <Button label="6" onClick={() => onForward('6')} />
+                    <Button label="×" onClick={() => onForward(' × ')} className="operator" />
                 </div>
                 <div>
-                    <Button label="1" />
-                    <Button label="2" />
-                    <Button label="3" />
-                    <Button label="−" className="operator" />
+                    <Button label="1" onClick={() => onForward('1')} />
+                    <Button label="2" onClick={() => onForward('2')} />
+                    <Button label="3" onClick={() => onForward('3')} />
+                    <Button label="−" onClick={() => onForward(' − ')} className="operator" />
                 </div>
                 <div>
-                    <Button label="0" />
-                    <Button label="." />
+                    <Button label="0" onClick={() => onForward('0')} />
+                    <Button label="." onClick={() => onForward('.')} />
                     <Button label="=" className="equal" />
-                    <Button label="+" className="operator" />
+                    <Button label="+" onClick={() => onForward(' + ')} className="operator" />
                 </div>
             </ButtonTable>
         </Container>

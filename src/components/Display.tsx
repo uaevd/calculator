@@ -1,6 +1,8 @@
+import { useContext } from 'react';
 import styled from '@emotion/styled';
 
 import { Label } from 'components/Label';
+import { CalculatorContext } from 'context/CalculatorContext';
 
 const Container = styled.div`
     backdrop-filter: blur(5.5px);
@@ -14,9 +16,13 @@ const Container = styled.div`
     width: 344px;
 `;
 
-export const Display = () => (
-    <Container>
-        <Label text="Label" fontSize="12px" color="#939393" />
-        <Label text="Label" fontSize="24px" color="#232323" />
-    </Container>
-);
+export const Display = () => {
+    const { snapshot, buffer } = useContext(CalculatorContext);
+
+    return (
+        <Container>
+            <Label text={snapshot} fontSize="12px" color="#939393" />
+            <Label text={buffer} fontSize="24px" color="#232323" />
+        </Container>
+    );
+};
